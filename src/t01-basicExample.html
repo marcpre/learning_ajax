@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ajax with Javascript</title>
+</head>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            document.getElementById('ajax').innerHTML = xhr.responseText;
+        }
+    };
+    xhr.open('GET', 'sidebar.html')
+
+    function sendAJAX() {
+        xhr.send(); // send request
+        document.getElementById('load').style.display = "none";
+    }
+</script>
+
+<body>
+
+    <h1>My First Heading</h1>
+    <div id="ajax">
+        <button id="load" onclick="sendAJAX()">Submit Request</button>
+
+
+    </div>
+</body>
+
+</html>
